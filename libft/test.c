@@ -3,6 +3,6 @@
 
 int main(void)
 {
-	printf("%d", isalpha('3'));
+	printf("%d", isprint(31));
 	return (0);
 }

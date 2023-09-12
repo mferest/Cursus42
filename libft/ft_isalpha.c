@@ -6,14 +6,15 @@
 /*   By: manufern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 18:24:58 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/11 19:49:46 by manufern         ###   ########.fr       */
+/*   Updated: 2023/09/12 16:48:44 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha (int c)
+/*esta funcion comprueba si un caracter es una litra*/
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return(1);
+		return (1);
 	else
-		return(0);
+		return (0);
 }
