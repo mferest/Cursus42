@@ -6,18 +6,18 @@
 /*   By: manufern <manufern@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:24:03 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/13 18:00:30 by manufern         ###   ########.fr       */
+/*   Updated: 2023/09/14 12:30:36 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (s[i] < n)
+	while (i < n)
 	{
-		s[i] = '\0';
+		((char *)s)[i] = '\0';
 		i ++;
 	}
 }

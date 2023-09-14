@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manufern <manufern@student.42madrid>       +#+  +:+       +#+        */
+/*   By: manufern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 17:16:16 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/14 11:44:34 by manufern         ###   ########.fr       */
+/*   Created: 2023/09/14 13:29:19 by manufern          #+#    #+#             */
+/*   Updated: 2023/09/14 13:34:35 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Esta funcion devuelve un 8 si es un numero o una letra
-se es otra cosa devuelve un 0*/
-int	ft_isalnum(int c)
+size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') 
-		|| (c >= '0' && c <= '9'))
-		return (8);
-	else
-		return (0);
+	size_t	i;
+
+	i = 0;
+	while (i < dstize)
+	{
+		dst[i] = src[i];
+		i ++;
+	}
+	return (i);
 }
