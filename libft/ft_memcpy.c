@@ -6,7 +6,7 @@
 /*   By: manufern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 18:01:32 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/13 19:47:32 by manufern         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:34:24 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	while (i < n)
 	{
 		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-			i ++;
+		i ++;
 	}
 	return (dst);
 }

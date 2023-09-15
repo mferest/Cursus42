@@ -6,11 +6,11 @@
 /*   By: manufern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 13:29:19 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/14 13:34:35 by manufern         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:33:50 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
