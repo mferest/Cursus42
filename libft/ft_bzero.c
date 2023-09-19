@@ -6,9 +6,11 @@
 /*   By: manufern <manufern@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 18:24:03 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/14 12:30:36 by manufern         ###   ########.fr       */
+/*   Updated: 2023/09/19 16:31:32 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

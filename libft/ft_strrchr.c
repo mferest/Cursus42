@@ -6,26 +6,30 @@
 /*   By: manufern <manufern@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 11:46:54 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/15 15:56:55 by manufern         ###   ########.fr       */
+/*   Updated: 2023/09/19 19:04:40 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* encuentra la ultima ocurriencia del carracterque queremos buscar*/
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
-	int	last_ocurrent;
+	int	last_ocurrence;
 
+	last_ocurrence = -1;
 	i = 0;
-	last_ocurrent = -1;
+	if (c == '\0')
+		return ((char *)&s[ft_strlen(s)]);
 	while (s[i] != '\0')
 	{
 		if (s[i] == (const char)c)
-			last_ocurrent = i;
-		i ++;
+			last_ocurrence = i;
+		i++;
 	}
-	if (last_ocurrent != -1)
-		return ((char *)&s[last_ocurrent]);
+	if (last_ocurrence != -1)
+		return ((char *)&s[last_ocurrence]);
 	return (NULL);
 }
 /*

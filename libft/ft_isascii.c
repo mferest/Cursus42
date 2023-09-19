@@ -6,12 +6,15 @@
 /*   By: manufern <manufern@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 17:25:40 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/15 17:46:32 by manufern         ###   ########.fr       */
+/*   Updated: 2023/09/18 20:02:56 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* esta funcion devuelve un 1 si es caracter asccii
 devuelve un 0 si no es un caracter ascii*/
+
+#include "libft.h"
+
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
