@@ -6,7 +6,7 @@
 /*   By: manufern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 11:44:10 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/18 18:43:26 by manufern         ###   ########.fr       */
+/*   Updated: 2023/09/20 13:11:08 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,18 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const char	*chs1;
-	const char	*chs2;
+	const unsigned char	*chs1;
+	const unsigned char	*chs2;
 
 	chs1 = s1;
 	chs2 = s2;
-	while (chs1 == chs2 && n > 0)
+	while (n > 0)
 	{
+		if (*chs1 != *chs2)
+			return (*chs1 - *chs2);
 		chs1 ++;
 		chs2 ++;
 		n --;
 	}
-	return (chs1 - chs2);
+	return (0);
 }

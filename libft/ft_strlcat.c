@@ -6,7 +6,7 @@
 /*   By: manufern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 13:41:04 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/19 18:37:46 by manufern         ###   ########.fr       */
+/*   Updated: 2023/09/20 12:56:15 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
 	size_t	j;
 	size_t	dst_len;
 	size_t	src_len;
 
-	i = 0;
 	j = 0;
 	dst_len = 0;
 	src_len = 0;

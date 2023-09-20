@@ -6,7 +6,7 @@
 /*   By: manufern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 13:30:30 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/18 18:32:53 by manufern         ###   ########.fr       */
+/*   Updated: 2023/09/20 12:57:53 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			j ++;
 		if (needle[j] == '\0')
 			return ((char *)haystack + i);
-	i ++;
+		i ++;
 	}
 	return (NULL);
 }

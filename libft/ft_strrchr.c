@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 11:46:54 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/19 19:04:40 by manufern         ###   ########.fr       */
+/*   Updated: 2023/09/20 13:39:51 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,36 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
-	int	last_ocurrence;
+	const char	*last_ocurrence;
 
-	last_ocurrence = -1;
-	i = 0;
+	last_ocurrence = NULL;
 	if (c == '\0')
-		return ((char *)&s[ft_strlen(s)]);
-	while (s[i] != '\0')
 	{
-		if (s[i] == (const char)c)
-			last_ocurrence = i;
-		i++;
+		while (*s != '\0')
+			s++;
+		return ((char *)s);
 	}
-	if (last_ocurrence != -1)
-		return ((char *)&s[last_ocurrence]);
-	return (NULL);
+	while (*s != '\0')
+	{
+		if (*s == (const char)c)
+			last_ocurrence = s;
+		s ++;
+	}
+	return ((char *)last_ocurrence);
 }
-/*
-int main() {
-    const char *cadena = "Hola, mundo!";
-    int caracter_buscado = 'o';
 
-    char *resultado = ft_strrchr(cadena, caracter_buscado);
+/*int main() {
+    const char *str = "Hello, World!";
+    int target_char = '\0';
 
-    if (resultado != NULL) {
-        printf("La última ocurrencia de '%c' está en 
-	la posición %ld.\n", caracter_buscado, resultado - cadena);
+    char *result = ft_strrchr(str, target_char);
+
+    if (result) {
+        printf("Última ocurrencia de 
+	'\\0' en '%s' encontrada en la posición 
+	%ld\n", str, result - str);
     } else {
-        printf("El carácter '%c' no se encontró en i
-	la cadena.\n", caracter_buscado);
+        printf("'\\0' no se encontró en '%s'\n", str);
     }
 
     return 0;
