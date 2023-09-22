@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 11:46:54 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/20 13:39:51 by manufern         ###   ########.fr       */
+/*   Updated: 2023/09/21 19:56:03 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*last_ocurrence;
+	size_t		i;
+	char		found;
+	char		*end;
 
-	last_ocurrence = NULL;
-	if (c == '\0')
+	end = (char *)s;
+	found = (char )c;
+	i = ft_strlen(s);
+	while (i > 0)
 	{
-		while (*s != '\0')
-			s++;
-		return ((char *)s);
+		if (end[i] == found)
+			return (end + i);
+		i --;
 	}
-	while (*s != '\0')
-	{
-		if (*s == (const char)c)
-			last_ocurrence = s;
-		s ++;
-	}
-	return ((char *)last_ocurrence);
+	if (end[i] == found)
+		return (end);
+	return (NULL);
 }
 
 /*int main() {
