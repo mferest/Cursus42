@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manufern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 19:09:06 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/30 13:10:47 by manufern         ###   ########.fr       */
+/*   Created: 2023/09/30 11:22:23 by manufern          #+#    #+#             */
+/*   Updated: 2023/09/30 11:39:32 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*en cuentra el caracter quiero buscar en un string y
-devuelve un puntero apuntendo a esa letra se no la encuentra devuelve null*/
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	while (*s != '\0')
+	int		lengh;
+	int		i;
+	char	*new_str;
+
+	i = 0;
+	if (!s || !f)
+		return (NULL);
+	lengh = ft_strlen(s);
+	new_str = (char *)malloc(lengh + 1);
+	if (!new_str)
+		return (NULL);
+	while (i < lengh)
 	{
-		if (*s == (char )c)
-			return ((char *)s);
-		s++;
+		new_str[i] = f(i, s[i]);
+		i ++;
 	}
-	if (*s == (char )c)
-		return ((char *)s);
-	return (NULL);
+	new_str[lengh] = '\0';
+	return (new_str);
 }

@@ -6,7 +6,7 @@
 /*   By: manufern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:17:17 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/27 19:59:36 by manufern         ###   ########.fr       */
+/*   Updated: 2023/09/30 14:27:06 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,11 +96,10 @@ char	**ft_split(char const *s, char c)
 	aux[words] = NULL;
 	return (ft_matrix(aux, s, c, 0));
 }
-/*
-int main()
+/*int main()
 {
-    char const *input_string = "       ";
-    char c = ' ';
+    char const *input_string = "";
+    char c = '\0';
 
     char **result = ft_split(input_string, c);
 

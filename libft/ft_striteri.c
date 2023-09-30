@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manufern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 19:09:06 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/30 13:10:47 by manufern         ###   ########.fr       */
+/*   Created: 2023/09/30 12:23:44 by manufern          #+#    #+#             */
+/*   Updated: 2023/09/30 12:27:13 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*en cuentra el caracter quiero buscar en un string y
-devuelve un puntero apuntendo a esa letra se no la encuentra devuelve null*/
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	while (*s != '\0')
+	int	i;
+
+	i = 0;
+	while (s[i])
 	{
-		if (*s == (char )c)
-			return ((char *)s);
-		s++;
+		f(i, &s[i]);
+		i ++;
 	}
-	if (*s == (char )c)
-		return ((char *)s);
-	return (NULL);
 }
