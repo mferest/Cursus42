@@ -18,18 +18,27 @@ The goal of this project is simple: program a function that returns a line read 
 
 ## Funciones a recrear
 
-| Parte obligatoria (Mandatory Part) | Funciones permitidas             |
-| ----------------------------------- | --------------------------------- |
-| `get_next_line.c`                   | `read`, `malloc`, `free`         |
-| `get_next_line_utils.c`             | `read`, `malloc`, `free`         |
-| `get_next_line.h`                   | `read`, `malloc`, `free`         |
+<details>
+<summary>Parte obligatoria (Mandatory Part)</summary>
 
-### Bonus
+| Archivo                          | Funciones permitidas     |
+| -------------------------------  | ------------------------- |
+| `get_next_line.c`               | `read`, `malloc`, `free` |
+| `get_next_line_utils.c`         | `read`, `malloc`, `free` |
+| `get_next_line.h`               | `read`, `malloc`, `free` |
 
-| Funciones permitidas                | Funciones permitidas             |
-| ----------------------------------- | --------------------------------- |
-| `get_next_line_bonus.c`                   | `read`, `malloc`, `free`         |
-| `get_next_line_utils_bonus.c`             | `read`, `malloc`, `free`         |
-| `get_next_line_bonus.h`                   | `read`, `malloc`, `free`         |
+</details>
+
+<details>
+<summary>Bonus</summary>
+
+| Archivo                          | Funciones permitidas     |
+| -------------------------------  | ------------------------- |
+| `get_next_line_bonus.c`         | `read`, `malloc`, `free` |
+| `get_next_line_utils_bonus.c`   | `read`, `malloc`, `free` |
+| `get_next_line_bonus.h`         | `read`, `malloc`, `free` |
+
+</details>
+
 
 
