@@ -1,7 +1,7 @@
 ### 42 Projects - Common Core
 
 ### First cycle
-- [**Libft**][(https://github.com/mferest/Cursus42/tree/main/Cursus/circle-00/Libft) : 125/100 ✔️✔️
+- [**Libft**](https://github.com/mferest/Cursus42/tree/main/Cursus/circle-00/Libft) : 125/100 ✔️✔️
 
 ### Second cycle
 - [**get_next_line**](https://github.com/mferest/Cursus42/tree/main/Cursus/circle-01/get_next_line) : No entregado
