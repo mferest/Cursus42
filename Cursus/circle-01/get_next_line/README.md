@@ -18,15 +18,18 @@ The goal of this project is simple: program a function that returns a line read 
 
 ## Funciones a recrear
 
-### Parte obligatoria (Mandatory Part)
-
-- `get_next_line.c`: Implementa las funciones `read`, `malloc`, `free`.
-- `get_next_line_utils.c`: Implementa las funciones `read`, `malloc`, `free`.
-- `get_next_line.h`: Implementa las funciones `read`, `malloc`, `free`.
+| Parte obligatoria (Mandatory Part) | Funciones permitidas             |
+| ----------------------------------- | --------------------------------- |
+| `get_next_line.c`                   | `read`, `malloc`, `free`         |
+| `get_next_line_utils.c`             | `read`, `malloc`, `free`         |
+| `get_next_line.h`                   | `read`, `malloc`, `free`         |
 
 ### Bonus
 
-- `get_next_line_bonus.c`: Implementa las funciones `read`, `malloc`, `free`.
-- `get_next_line_utils_bonus.c`: Implementa las funciones `read`, `malloc`, `free`.
-- `get_next_line_bonus.h`: Implementa las funciones `read`, `malloc`, `free`.
+| Funciones permitidas                | Funciones permitidas             |
+| ----------------------------------- | --------------------------------- |
+| `get_next_line_bonus.c`                   | `read`, `malloc`, `free`         |
+| `get_next_line_utils_bonus.c`             | `read`, `malloc`, `free`         |
+| `get_next_line_bonus.h`                   | `read`, `malloc`, `free`         |
+
 
