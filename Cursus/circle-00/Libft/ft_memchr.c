@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* me devuelve un puntero que apunta a la primera aparicion del caracter
- que quiero buscar*/
 #include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)

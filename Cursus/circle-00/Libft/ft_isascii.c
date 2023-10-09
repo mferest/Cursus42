@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* esta funcion devuelve un 1 si es caracter asccii
-devuelve un 0 si no es un caracter ascii*/
-
 #include "libft.h"
 
 int	ft_isascii(int c)

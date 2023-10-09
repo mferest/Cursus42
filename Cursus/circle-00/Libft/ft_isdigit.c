@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Esta funcion comprueba si lo que introducimos es un digito entre el 0 y el 9 
-y si no es un digito entre essos numeros devulve un 0 
-y si es un numero entre esos digitos devuelve 2048*/
 #include "libft.h"
 
 int	ft_isdigit(int c)

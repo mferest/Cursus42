@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Esta funcion devuelve un 8 si es un numero o una letra
-se es otra cosa devuelve un 0*/
 #include "libft.h"
 
 int	ft_isalnum(int c)

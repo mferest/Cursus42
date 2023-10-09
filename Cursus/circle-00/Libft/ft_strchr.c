@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*en cuentra el caracter quiero buscar en un string y
-devuelve un puntero apuntendo a esa letra se no la encuentra devuelve null*/
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)

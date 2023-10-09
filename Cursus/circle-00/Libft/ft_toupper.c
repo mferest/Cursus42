@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*convirte una letra de minuscula a mallusculas y devuelve la mayuscula*/
 #include "libft.h"
 
 int	ft_toupper(int c)

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* comvierte de mallusculas a minusculas y devuelve l convertido */
 #include "libft.h"
 
 int	ft_tolower(int c)

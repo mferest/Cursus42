@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Si el caracter printeable devuelve 16384
-si el caracter no es printeable devuelve 0 */
 #include "libft.h"
 
 int	ft_isprint(int c)

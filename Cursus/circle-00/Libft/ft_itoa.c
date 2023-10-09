@@ -49,9 +49,3 @@ char	*ft_itoa(int n)
 		numb[0] = '-';
 	return (numb);
 }
-/*
-int main()
-{
-    ft_itoa(-1234);
-    return (0);
-}*/

@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* compara dos cadenas de texto hasta un tamaño si son iguales
- devuelve un 0  y si son distintos devuelve la resta s1 - s2*/
 #include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)

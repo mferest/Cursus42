@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*esta funcion comprueba si un caracter es una litra*/
 #include "libft.h"
 
 int	ft_isalpha(int c)

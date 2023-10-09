@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: manufern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/14 09:36:08 by manufern          #+#    #+#             */
-/*   Updated: 2023/09/19 19:33:50 by manufern         ###   ########.fr       */
+/*   Created: 2023/10/02 17:12:30 by manufern          #+#    #+#             */
+/*   Updated: 2023/10/02 17:27:28 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,29 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*d;
-	char	*s;
+	size_t				i;
+	unsigned char		*d;
+	const unsigned char	*s;
 
-	d = (char *)dst;
-	s = (char *)src;
-	if (dst < src)
+	s = src;
+	d = dst;
+	i = 0;
+	if (d < s)
 	{
-		while (len --)
-			*d++ = *s++;
+		while (i < len)
+		{
+			d[i] = s[i];
+			i ++;
+		}
 	}
 	else if (d > s)
 	{
-		d += len;
-		s += len;
-		while (len --)
-			*(--d) = *(--s);
+		i = len;
+		while (i > 0)
+		{
+			i --;
+			d[i] = s[i];
+		}
 	}
 	return (dst);
 }

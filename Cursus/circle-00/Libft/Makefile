@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: manufern <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/10/07 20:45:56 by manufern          #+#    #+#              #
+#    Updated: 2023/10/07 20:46:02 by manufern         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 GCC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -35,9 +47,15 @@ SRCS                    = ft_atoi.c \
                       ft_putstr_fd.c \
                       ft_putendl_fd.c \
                       ft_putnbr_fd.c
-BNS_SRCS                = ft_lstnew.c \
-						  ft_lstadd_front.c \
-						  ft_lstsize.c
+BNS_SRCS                = ft_lstnew_bonus.c \
+						  ft_lstadd_front_bonus.c \
+						  ft_lstsize_bonus.c \
+						  ft_lstlast_bonus.c \
+						  ft_lstadd_back_bonus.c \
+						  ft_lstdelone_bonus.c \
+						  ft_lstclear_bonus.c \
+						  ft_lstmap_bonus.c \
+						  ft_lstiter_bonus.c 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(BNS_SRCS:.c=.o)
 RM				= rm -f
