@@ -12,7 +12,7 @@
 <h2>FUNCIONES A RECREAR (FUNTIONS TO RECREATE)</h2>
 <h3> PARTE OBLIGATORIA (MANDATORY PART)</h3>
 <p>
-<table>
+<table align="center">
 	<tbody>
 		<tr>
 			<td>get_next_line.c</td>
@@ -31,7 +31,7 @@
 </p>
 
 <h3> BONUS </h3>
-<table>
+<table align="center">
 	<tbody>
 		<tr>
 			<td>get_next_line_bonus.c</td>
