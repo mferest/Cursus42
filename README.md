@@ -7,7 +7,3 @@
 - [get_next_line](https://github.com/titouanck/42-get_next_line) : no entregado
 - [ft_printf](https://github.com/titouanck/42-ft_printf) : no entregado
 - [Born2beroot](https://github.com/titouanck/42-Born2beroot) : no entregado
-
-
-
-![holygraph](https://github.com/titouanck/42-cursus/assets/87268044/b1111d6f-4dcb-43d3-a518-abce7f0eeab8)
