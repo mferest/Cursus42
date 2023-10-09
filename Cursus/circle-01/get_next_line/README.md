@@ -19,7 +19,7 @@ The goal of this project is simple: program a function that returns a line read 
 ## Funciones a recrear
 
 <details>
-<summary>Parte obligatoria (Mandatory Part)</summary>
+<summary style="color: #0066cc; font-weight: bold;">Parte obligatoria (Mandatory Part)</summary>
 
 | Archivo                          | Funciones permitidas     |
 | -------------------------------  | ------------------------- |
@@ -30,7 +30,7 @@ The goal of this project is simple: program a function that returns a line read 
 </details>
 
 <details>
-<summary>Bonus</summary>
+<summary style="color: #ff9933; font-weight: bold;">Bonus</summary>
 
 | Archivo                          | Funciones permitidas     |
 | -------------------------------  | ------------------------- |
@@ -39,6 +39,3 @@ The goal of this project is simple: program a function that returns a line read 
 | `get_next_line_bonus.h`         | `read`, `malloc`, `free` |
 
 </details>
-
-
-
