@@ -1,87 +1,74 @@
 # 42Cursus-Libft
-<p>
-<img src="https://cdn-icons-png.flaticon.com/512/317/317316.png" width="20px"/> Primer proyecto del Cursus de 42 Madrid<br>
-<img src="https://cdn-icons-png.flaticon.com/512/6737/6737832.png"width="20px"/> First proyect of the 42 Madrid Cursus
-</p>
-<h1>OBJETIVO (OBJECTIVE)</h1>
-<p>
-<img src="https://cdn-icons-png.flaticon.com/512/317/317316.png" width="20px"/> El objetivo del proyecto es crear tu primera librería en C recreando funciones ya existentes para usarlas en futuros proyectos.<br>
-<img src="https://cdn-icons-png.flaticon.com/512/6737/6737832.png"width="20px"/> The objective of the proyect is to create our first c library by recreating existing functions for use in future proyects.
-</p>
 
-<h2>FUNCIONES A RECREAR (FUNTIONS TO RECREATE)</h2>
-<h3> PARTE OBLIGATORIA (MANDATORY PART)</h3>
-<p>
-<table>
-<tr>
-<td>
-<ul>
-<li>isalpha</li>
-<li>isdigit</li>
-<li>isalnum</li>
-<li>isascii</li>
-<li>isprint</li>
-<li>strlen</li>
-<li>memset</li>
-<li>bzero</li>
-<li>memcpy</li>
-<li>memmove</li>
-<li>strlcpy</li>
-</ul>
-</td>
-<td>
-<ul>
-<li>strlcat</li>
-<li>toupper</li>
-<li>tolower</li>
-<li>strchr</li>
-<li>strrchr</li>
-<li>strncmp</li>
-<li>memchr</li>
-<li>memcmp</li>
-<li>strnstr</li>
-<li>atoi</li>
-</ul>
-</td>
+![Proyecto Icono](https://cdn-icons-png.flaticon.com/512/317/317316.png)
 
-<td>
-Using Malloc
-<ul>
-<li>calloc</li>
-<li>strdup</li>
-</ul>
-</td>
-<td>
-<li>ft_substr</li>
-<li>ft_strjoin</li>
-<li>ft_strtrim</li>
-<li>ft_split</li>
-<li>ft_itoa</li>
-<li>ft_strmapi</li>
-<li>ft_striteri</li>
-<li>ft_putchar_fd</li>
-<li>ft_putendl_fd</li>
-<li>ft_putnbr_fd</li>
-</td>
-</tr>
-</table>
-</p>
+## Primer proyecto del Cursus de 42 Madrid
 
-<h3> BONUS </h3>
-<table>
-<tr>
-<td>
-<ul>
-<li>ft_lstnew</li>
-<li>ft_lstadd_front</li>
-<li>ft_lstsize</li>
-<li>ft_lstlast</li>
-<li>ft_lstadd_back</li>
-<li>ft_lstdelone</li>
-<li>ft_lstclear</li>
-<li>ft_lstiter</li>
-<li>ft_lstmap</li>
-</ul>
-</td>
-</tr>
-</table>
+Este es el primer proyecto del Cursus de 42 Madrid, que tiene como objetivo crear tu primera librería en C recreando funciones ya existentes para usarlas en futuros proyectos.
+
+## Objetivo
+
+![Icono de objetivo](https://cdn-icons-png.flaticon.com/512/6737/6737832.png)
+
+El objetivo del proyecto es simple: crear nuestra primera biblioteca en C recreando funciones existentes para utilizarlas en proyectos futuros.
+
+## Funciones a recrear
+
+### Parte obligatoria (MANDATORY PART)
+
+Este proyecto implica la recreación de las siguientes funciones estándar de C:
+
+- isalpha
+- isdigit
+- isalnum
+- isascii
+- isprint
+- strlen
+- memset
+- bzero
+- memcpy
+- memmove
+- strlcpy
+- strlcat
+- toupper
+- tolower
+- strchr
+- strrchr
+- strncmp
+- memchr
+- memcmp
+- strnstr
+- atoi
+
+También se requiere el uso de `malloc` para las siguientes funciones:
+
+- calloc
+- strdup
+
+Y se deben crear las siguientes funciones adicionales:
+
+- ft_substr
+- ft_strjoin
+- ft_strtrim
+- ft_split
+- ft_itoa
+- ft_strmapi
+- ft_striteri
+- ft_putchar_fd
+- ft_putendl_fd
+- ft_putnbr_fd
+
+### Bonus
+
+Como parte del bonus, puedes implementar las siguientes funciones relacionadas con listas enlazadas:
+
+- ft_lstnew
+- ft_lstadd_front
+- ft_lstsize
+- ft_lstlast
+- ft_lstadd_back
+- ft_lstdelone
+- ft_lstclear
+- ft_lstiter
+- ft_lstmap
+
