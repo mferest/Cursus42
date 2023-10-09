@@ -4,7 +4,7 @@
 - [**Libft**](https://github.com/mferest/Cursus42/tree/main/Cursus/circle-00/Libft) : 125/100
 
 ### Second cycle
-- [**get_next_line**](https://github.com/mferest/Cursus42/tree/main/Cursus/circle-01) : No entregado
+- [**get_next_line**](https://github.com/mferest/Cursus42/tree/main/Cursus/circle-01/get_next_line) : No entregado
 - [**ft_printf**](https://github.com/mferest/Cursus42/tree/main/Cursus/circle-01) : No entregado
 - [**Born2beroot**](https://github.com/mferest/Cursus42/tree/main/Cursus/circle-00/Libft) : En proceso
 
