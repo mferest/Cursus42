@@ -12,51 +12,6 @@ mejoralo # 42Cursus-Libft
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-  h2 {
-    color: #3498db;
-  }
-
-  h3 {
-    color: #e74c3c;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-
-  table, th, td {
-    border: 1px solid #ccc;
-  }
-
-  th, td {
-    padding: 10px;
-    text-align: left;
-  }
-
-  ul {
-    list-style-type: square;
-  }
-
-  td ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    margin: 5px 0;
-  }
-
-  td ul li {
-    color: #333;
-  }
-
-  .bonus {
-    background-color: #f39c12;
-  }
-</style>
 </head>
 <body>
 <h2>FUNCIONES A RECREAR (FUNCTIONS TO RECREATE)</h2>
