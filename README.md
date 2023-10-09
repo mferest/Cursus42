@@ -1,9 +1,7 @@
+### 42 Projects - Common Core
 
-<summary style="color: #0066cc; font-weight: bold;"> 42 Projects - Common Core (Mandatory Part)</summary>
-<details>
-<summary style="color: #0066cc; font-weight: bold;"> First cycle (Mandatory Part)</summary>
-    Libft : 125/100 ✔️✔️
-</details>
+### First cycle
+- [**Libft**](https://github.com/mferest/Cursus42/tree/main/Cursus/circle-00/libft) : 125/100 ✔️✔️
 
 ### Second cycle
 - [**get_next_line**](https://github.com/mferest/Cursus42/tree/main/Cursus/circle-01/get_next_line) : No entregado
