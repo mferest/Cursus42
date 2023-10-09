@@ -1,6 +1,5 @@
 # 42Cursus-Libft
 
-![Proyecto Icono](https://cdn-icons-png.flaticon.com/512/317/317316.png)
 
 ## Proyecto del segundo círculo del Cursus de 42 Madrid
 
@@ -8,9 +7,11 @@ Este proyecto forma parte del segundo círculo del Cursus de 42 Madrid y tiene c
 
 ## Objetivo
 
-![Icono de objetivo](https://cdn-icons-png.flaticon.com/512/6737/6737832.png)
+![Proyecto Icono](https://cdn-icons-png.flaticon.com/512/317/317316.png)
 
 El objetivo de este proyecto es simple: programar una función que devuelva una línea leída de un descriptor de archivo.
+
+![Icono de objetivo](https://cdn-icons-png.flaticon.com/512/6737/6737832.png)
 
 The goal of this project is simple: program a function that returns a line read from a file descriptor.
 
