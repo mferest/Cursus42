@@ -1,49 +1,47 @@
 # 42Cursus-Libft
-<p>
-<img src="https://cdn-icons-png.flaticon.com/512/317/317316.png" width="20px"/> Proyecto del segundo ccirculo del Cursus de 42 Madrid<br>
-<img src="https://cdn-icons-png.flaticon.com/512/6737/6737832.png"width="20px"/> Project for the second circle of the Cursus de 42 Madrid
-</p>
-<h1>OBJETIVO (OBJECTIVE)</h1>
-<p>
-<img src="https://cdn-icons-png.flaticon.com/512/317/317316.png" width="20px"/> El objetivo de este proyecto es simple: programar una función que devuelva una línea leída de un file descriptor.<br>
-<img src="https://cdn-icons-png.flaticon.com/512/6737/6737832.png"width="20px"/> The goal of this project is simple: program a function that returns a line read from a file descriptor.
+
+<p align="center">
+  <img src="https://cdn-icons-png.flaticon.com/512/317/317316.png" width="100px" alt="Icono del proyecto"/>
 </p>
 
-<h2>FUNCIONES A RECREAR (FUNTIONS TO RECREATE)</h2>
-<h3> PARTE OBLIGATORIA (MANDATORY PART)</h3>
-<p>
-<table>
-	<tbody>
-		<tr>
-			<td>get_next_line.c</td>
-			<td>read, malloc, free</td>
-		</tr>
-		<tr>
-			<td>get_next_line_utils.c</td>
-			<td>read, malloc, free</td>
-		</tr>
-		<tr>
-			<td>get_next_line.h</td>
-			<td>read, malloc, free</td>
-		</tr>
-	</tbody>
-</table>
+## Proyecto del segundo círculo del Cursus de 42 Madrid
+
+[![Estado del proyecto](https://img.shields.io/badge/Estado-En%20progreso-yellow)](https://github.com/tuusuario/42Cursus-Libft)
+[![Licencia](https://img.shields.io/badge/Licencia-MIT-blue)](https://github.com/tuusuario/42Cursus-Libft/blob/main/LICENSE)
+
+Este proyecto forma parte del segundo círculo del Cursus de 42 Madrid y tiene como objetivo proporcionar una función que pueda leer líneas de un descriptor de archivo.
+
+## Objetivo (Objective)
+
+<p align="center">
+  <img src="https://cdn-icons-png.flaticon.com/512/6737/6737832.png" width="20px" alt="Icono de objetivo"/>
 </p>
 
-<h3> BONUS </h3>
-<table>
-	<tbody>
-		<tr>
-			<td>get_next_line_bonus.c</td>
-			<td>read, malloc, free</td>
-		</tr>
-		<tr>
-			<td>get_next_line_utils_bonus.c</td>
-			<td>read, malloc, free</td>
-		</tr>
-		<tr>
-			<td>get_next_line_bonus.h</td>
-			<td>read, malloc, free</td>
-		</tr>
-	</tbody>
-</table>
+El objetivo de este proyecto es simple: programar una función que devuelva una línea leída de un descriptor de archivo.
+
+The goal of this project is simple: program a function that returns a line read from a file descriptor.
+
+## Funciones a recrear (Functions to recreate)
+
+### Parte obligatoria (Mandatory Part)
+
+<p align="center">
+  <img src="https://cdn-icons-png.flaticon.com/512/317/317316.png" width="20px" alt="Icono de función obligatoria"/>
+</p>
+
+- `get_next_line.c`: Implementa las funciones `read`, `malloc`, `free`.
+- `get_next_line_utils.c`: Implementa las funciones `read`, `malloc`, `free`.
+- `get_next_line.h`: Implementa las funciones `read`, `malloc`, `free`.
+
+### Bonus
+
+<p align="center">
+  <img src="https://cdn-icons-png.flaticon.com/512/6737/6737832.png" width="20px" alt="Icono de bonus"/>
+</p>
+
+- `get_next_line_bonus.c`: Implementa las funciones `read`, `malloc`, `free`.
+- `get_next_line_utils_bonus.c`: Implementa las funciones `read`, `malloc`, `free`.
+- `get_next_line_bonus.h`: Implementa las funciones `read`, `malloc`, `free`.
+
+</p>
+
