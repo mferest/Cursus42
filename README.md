@@ -1,5 +1,5 @@
 
-<summary style="color: #0066cc; font-weight: bold;"> ## 42 Projects - Common Core (Mandatory Part)</summary>
+<summary style="color: #0066cc; font-weight: bold;"> 42 Projects - Common Core (Mandatory Part)</summary>
 <details>
 <summary style="color: #0066cc; font-weight: bold;"> ### First cycle (Mandatory Part)</summary>
 Libft : 125/100 ✔️✔️
