@@ -12,6 +12,8 @@
 
 #include "get_next_line.h"
 
+#include "get_next_line.h"
+
 size_t	ft_strlen(char *s)
 {
 	int	i;
