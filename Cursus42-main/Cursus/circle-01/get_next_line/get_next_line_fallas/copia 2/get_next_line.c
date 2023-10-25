@@ -12,25 +12,6 @@
 
 #include "get_next_line.h"
 
-char *next_line(char *buffer)
-{
-	char *tmp;
-	
-	tmp = ft_strchr(buffer, '\n') + 1;
-	if (ft_strlen(tmp) > 0)
-	{
-		tmp = ft_strdup(tmp);
-	}
-	else
-	{
-	tmp = NULL;
-	}
-	if (buffer != NULL)
-	{
-		free(buffer);
-	}
-	return (tmp);
-}
 int	ft_found_line(char *buffer)
 {
 	int	i;
@@ -47,16 +28,32 @@ int	ft_found_line(char *buffer)
 	return (0);
 }
 
+char	*ft_copy(char *frag, int bytes_read)
+{
+	char	*aux;
+	int		i;
+
+	i = 0;
+	aux = NULL;
+	aux = malloc(bytes_read + 1);
+	if (!aux)
+	{
+		return (NULL);
+	}
+	while (i < bytes_read)
+	{
+		aux[i] = frag[i];
+		i++;
+	}
+	aux[i] = '\0';
+	return (aux);
+}
+
 char	*ft_read(int fd, char *buffer, int *bytes_read)
 {
 	char	frag[BUFFER_SIZE + 1];
 	char	*tmp;
 
-	if(read(fd, 0, 0) < 0)
-	{
-		free (buffer);
-		return (NULL);
-	}
 	*bytes_read = read(fd, frag, BUFFER_SIZE);
 	if (*bytes_read > 0)
 		frag[*bytes_read] = '\0';
@@ -68,46 +65,46 @@ char	*ft_read(int fd, char *buffer, int *bytes_read)
 	}
 	if (!buffer)
 	{ 
-		tmp = ft_strdup(frag);
+		tmp = ft_copy(frag, *bytes_read);
 	}
 	else
 	{
 		tmp = ft_strjoin(buffer, frag);
-		free(buffer);
 	}
 	return (tmp);
-} 
+}
 
 char	*get_next_line(int fd)
 {
 	static char	*buffer = NULL;
 	char		*line;
-	int			has_line;
+	int			yes_no;
 	int			bytes_read;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 )
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (line = NULL);
 	buffer = ft_read(fd, buffer, &bytes_read);
-	if (buffer == NULL)
+	if (buffer[0] == '\0')
 		return (NULL);
-	has_line = ft_found_line(buffer);
-	if (has_line == 1)
+	yes_no = ft_found_line(buffer);
+	if (yes_no == 1)
 	{
 		line = ft_substr(buffer);
-		if (!line)
-			return(free(buffer), buffer = NULL, NULL);
-		return (buffer = next_line(buffer), line);
+		buffer = ft_strchr(buffer, '\n') + 1;
+		return (line);
 	}
-	if (has_line == 2 && bytes_read < BUFFER_SIZE)
+	if (yes_no == 2 && bytes_read < BUFFER_SIZE)
 	{
-		line = ft_strdup(buffer);
-			return(free(buffer), buffer = NULL, line);
+		line = ft_copy(buffer, ft_strlen(buffer));
+		buffer[0] = '\0';
+		return (line);
 	}
 	return (get_next_line(fd));
 }
-/* int	main(void)
- {
-	int fd = open("giant_line_nl.txt", O_RDONLY);
+
+int	main(void)
+{
+	int fd = open("cancion", O_RDONLY);
 	if (fd == -1)
 	{
 		perror("Error al abrir el archivo");
@@ -123,35 +120,4 @@ char	*get_next_line(int fd)
 
 	close(fd);
 	return 0;
-}  */
-
-/* int	main(void)
-{
-	char	*line;
-	int		i;
-	int		fd1;
-	int		fd2;
-	int		fd3;
-
-	fd1 = open("cancion", O_RDONLY);
-	fd2 = open("big_line_no_nl", O_RDONLY);
-	fd3 = open("giant_line.txt", O_RDONLY);
-	i = 1;
-	while (i < 7)
-	{
-		line = get_next_line(fd1);
-		printf("line [%02d]: %s", i, line);
-		free(line);
-		line = get_next_line(fd2);
-		printf("line [%02d]: %s", i, line);
-		free(line);
-		line = get_next_line(fd3);
-		printf("line [%02d]: %s", i, line);
-		free(line);
-		i++;
-	}
-	close(fd1);
-	close(fd2);
-	close(fd3);
-	return (0);
-} */
+}

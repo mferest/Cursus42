@@ -80,28 +80,28 @@ char	*ft_read(int fd, char *buffer, int *bytes_read)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer = NULL;
+	static char	*buffer[4096];
 	char		*line;
 	int			has_line;
 	int			bytes_read;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 )
 		return (line = NULL);
-	buffer = ft_read(fd, buffer, &bytes_read);
-	if (buffer == NULL)
+	buffer[fd] = ft_read(fd, buffer[fd], &bytes_read);
+	if (buffer[fd] == NULL)
 		return (NULL);
-	has_line = ft_found_line(buffer);
+	has_line = ft_found_line(buffer[fd]);
 	if (has_line == 1)
 	{
-		line = ft_substr(buffer);
+		line = ft_substr(buffer[fd]);
 		if (!line)
-			return(free(buffer), buffer = NULL, NULL);
-		return (buffer = next_line(buffer), line);
+			return(free(buffer[fd]), buffer[fd] = NULL, NULL);
+		return (buffer[fd] = next_line(buffer[fd]), line);
 	}
 	if (has_line == 2 && bytes_read < BUFFER_SIZE)
 	{
-		line = ft_strdup(buffer);
-			return(free(buffer), buffer = NULL, line);
+		line = ft_strdup(buffer[fd]);
+			return(free(buffer[fd]), buffer[fd] = NULL, line);
 	}
 	return (get_next_line(fd));
 }
