@@ -9,5 +9,6 @@
 - [**Born2beroot**](https://github.com/mferest/Cursus42/tree/main/Cursus42-main/Cursus/circle-01/Born2beroot) : En proceso
 
   
-![descarga (2)](https://github.com/mferest/Cursus42/assets/139508718/af8f94d9-ea2d-4f7b-8d88-7e7993f8efee)
+(![image](https://github.com/mferest/Cursus42/assets/139508718/8230a118-c174-4269-ba88-1c34c35e3cbe)
+
 
