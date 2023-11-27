@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:52:33 by manufern          #+#    #+#             */
-/*   Updated: 2023/11/25 20:53:24 by manufern         ###   ########.fr       */
+/*   Updated: 2023/11/27 18:34:32 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 
 void	ft_putchar(char c, int fd, int *len)
 {
-	int i;
-	
-	i = write(fd, &c, 1);
-	(*len)++;
+	if (write(fd, &c, 1) == -1)
+	{
+		*len = -1;
+	}
+	else
+		(*len)++;
 }
 
 int	check_base(char *base)
@@ -54,7 +56,6 @@ void	ft_putnbr_base(int nbr, char *base, int *len)
 	size = check_base (base);
 	if (size <= 1)
 		return ;
-	num = 0;
 	if (nbr < 0)
 	{
 		ft_putchar ('-', 1, len);
@@ -62,11 +63,14 @@ void	ft_putnbr_base(int nbr, char *base, int *len)
 	}
 	else
 		num = nbr;
+	if (*len == -1)
+		return ;
 	if (num >= size)
 	{
 		ft_putnbr_base (num / size, base, len);
+		if (*len == -1)
+			return ;
 		ft_putchar (base[num % size], 1, len);
-
 	}
 	else
 		ft_putchar (base[num % size], 1, len);
@@ -80,13 +84,16 @@ void	ft_unsing(int nbr, char *base, int *len)
 	size = check_base (base);
 	if (size <= 1)
 		return ;
-	num = 0;
 	num = nbr;
 	if (num >= size)
 	{
 		ft_putnbr_base (num / size, base, len);
+		if (*len == -1)
+			return ;
 		ft_putchar (base[num % size], 1, len);
 	}
 	else
 		ft_putchar (base[num % size], 1, len);
+	if (*len == -1)
+		return ;
 }

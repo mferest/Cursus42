@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:52:33 by manufern          #+#    #+#             */
-/*   Updated: 2023/11/25 20:53:50 by manufern         ###   ########.fr       */
+/*   Updated: 2023/11/27 18:52:51 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,55 +14,55 @@
 #include <unistd.h>
 #include "ft_printf.h"
 
-
-
-
-void ft_hexa(unsigned long long nb, char *base, int *len)
+void	ft_hexa(unsigned long long nb, char *base, int *len)
 {
-    if (nb == 0)
-    {
-        ft_putchar(base[0], 1, len);
-        return;
-    }
-
-    if (nb >= 16)
-    {
-        ft_hexa(nb / 16, base, len);
-        ft_hexa(nb % 16, base, len);
-    }
-    else
-        ft_putchar(base[nb], 1, len);
+	if (nb == 0)
+	{
+		ft_putchar(base[0], 1, len);
+		return ;
+	}
+	if (nb >= 16)
+	{
+		ft_hexa(nb / 16, base, len);
+		ft_hexa(nb % 16, base, len);
+	}
+	else
+		ft_putchar(base[nb], 1, len);
+	if (*len == -1)
+		return ;
 }
 
-
-
-
-
-
-
-void ft_putstr(char *str, int *len)
+void	ft_putstr(char *str, int *len)
 {
-	int i;
-	int count;
-	
+	int	i;
+	int	count;
+
 	i = 0;
 	count = 0;
 	if (!str)
 	{
-		write(1, "(null)", 6);
+		i = write(1, "(null)", 6);
+		if (i == -1)
+		{
+			*len = -1;
+			return ;
+		}
 		(*len) += 6;
 		return ;
 	}
-	while(str[i] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
 		ft_putchar (str[i], 1, len);
+		if (*len == -1)
+			return ;
 		i ++;
 	}
 }
 
-int ft_is_format(char c)
+int	ft_is_format(char c)
 {
-    if (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i'
+	if (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i'
 		|| c == 'u' || c == 'x' || c == 'X' || c == '%')
 		return (1);
 	return (0);
@@ -70,30 +70,33 @@ int ft_is_format(char c)
 
 void	ft_flag(va_list args, char c, int *len)
 {
-
 	if (c == 'c')
 		ft_putchar(va_arg(args, int), 1, len);
- 	else if (c == 's')
-		ft_putstr(va_arg(args, char *), len); 	
+	else if (c == 's')
+		ft_putstr(va_arg(args, char *), len);
 	else if (c == 'p')
 	{
-		write(1, "0x", 2);
+		if (write(1, "0x", 2) == -1)
+		{
+			*len = -1;
+			return ;
+		}
 		(*len) += 2;
 		ft_hexa(va_arg(args, unsigned long long), "0123456789abcdef", len);
 	}
 	else if (c == 'd' || c == 'i')
-		ft_putnbr_base(va_arg(args, int), "0123456789", len);	
+		ft_putnbr_base(va_arg(args, int), "0123456789", len);
 	else if (c == 'u')
-		ft_unsing(va_arg(args, unsigned int), "0123456789", len);	
+		ft_unsing(va_arg(args, unsigned int), "0123456789", len);
 	else if (c == 'x')
 		ft_unsing(va_arg(args, unsigned int), "0123456789abcdef", len);
 	else if (c == 'X')
-		ft_unsing(va_arg(args, unsigned int), "0123456789ABCDEF", len);	
+		ft_unsing(va_arg(args, unsigned int), "0123456789ABCDEF", len);
 	else if (c == '%')
 		ft_putchar('%', 1, len);
 }
 
-int ft_printf(char const *str, ...)
+int	ft_printf(char const *str, ...)
 {
 	va_list	args;
 	int		i;
@@ -102,8 +105,7 @@ int ft_printf(char const *str, ...)
 	i = 0;
 	len = 0;
 	va_start(args, str);
-
-    while (str[i])
+	while (str[i])
 	{
 		if (str[i] == '%' && ft_is_format(str[i + 1]))
 		{
@@ -112,6 +114,8 @@ int ft_printf(char const *str, ...)
 		}
 		else if (str[i] != '%')
 			ft_putchar(str[i], 1, &len);
+		if (len == -1)
+			return (len);
 		i++;
 	}
 	va_end(args);
@@ -124,4 +128,4 @@ int ft_printf(char const *str, ...)
 	printf("%d\n", (ft_printf("%ñ - %%\n", -1)));
 	printf("%d\n", (printf("%ñ - %%\n", -1)));
 	return (0);
-}  */ 
+}  */
