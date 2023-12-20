@@ -24,8 +24,6 @@
 
 ### [FDF](Cursus42-main/Cursus/circle-02/fdf)
 - **Objective:** Craft a 3D wireframe graphics project, currently in progress.
-- **Status:** 🔧 **In progress**
+- **Status:** 🛠️ **In progress**
 
 ![Project Screenshot](https://github.com/mferest/Cursus42/assets/139508718/16caf4be-0c23-4b86-a0d4-f1a7bc1a07f7)
-
-Explore each project to gain a deeper understanding of my programming prowess and problem-solving capabilities.
