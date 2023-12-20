@@ -1,4 +1,4 @@
-# Portfolio Showcase - Programming Projects
+# Programming Projects
 
 ## First Cycle
 
