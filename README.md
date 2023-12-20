@@ -28,4 +28,4 @@
 
 ![Project Screenshot](https://github.com/mferest/Cursus42/assets/139508718/16caf4be-0c23-4b86-a0d4-f1a7bc1a07f7)
 
-Feel free to explore each project for a deeper understanding of my programming skills and problem-solving capabilities. If you have any questions or would like more information, don't hesitate to reach out. Thank you for visiting my portfolio!
+Feel free to explore each project for a deeper understanding of my programming skills and problem-solving capabilities.
