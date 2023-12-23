@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: manufern <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: manufern <manufern@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/07 20:45:56 by manufern          #+#    #+#              #
-#    Updated: 2023/10/07 20:46:02 by manufern         ###   ########.fr        #
+#    Updated: 2023/12/11 17:16:56 by manufern         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,8 @@ SRCS                    = ft_atoi.c \
                       ft_putchar_fd.c \
                       ft_putstr_fd.c \
                       ft_putendl_fd.c \
-                      ft_putnbr_fd.c
+                      ft_putnbr_fd.c \
+                      ft_strcpy_to_char.c
 BNS_SRCS                = ft_lstnew_bonus.c \
 						  ft_lstadd_front_bonus.c \
 						  ft_lstsize_bonus.c \
