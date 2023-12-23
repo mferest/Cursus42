@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:17:27 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/21 19:03:24 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/23 11:09:00 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,27 @@ void ft_point_down(t_map *map)
 	
 	line1 = map;
 	line2 = map;
-	while (current != NULL && current->y != 1) {
-        printf("Iteración con y = %d\n", current->y);
-        current = current->next;
-    }
-	printf ("y = %d\n" , line2->y);
+	while (line2 != NULL && line2->y != 1)
+        line2 = line2->next;
+	while(line2 != NULL && line1 != NULL)
+	{
+       /* printf("line1 x = %d . line2 x = %d\n", line1->x, line2->x);  */
+		if (line1->y + 1 == line2->y)
+        {
+            /* printf("entro al if \n"); */
+			line1->down = line2;
+        }
+        else
+        {
+            printf("enro al else\n");
+            while (line1 != NULL && line1->x != line2->x)
+            {
+                line1 = line1->next;
+            }
+        }
+		line1 = line1->next;
+		line2 = line2->next;
+	}
 }
 
 t_map *new_map_node(int x, int y, int z, char *color)

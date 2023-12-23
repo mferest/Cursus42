@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:44:04 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/20 18:46:34 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/23 11:09:35 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #define ANGULE (0.523599)
 #endif
 #ifndef SCALE_FACTOR 
-#define SCALE_FACTOR 1.0
+#define SCALE_FACTOR 20.0
 #endif
 
 #include <stdlib.h>
