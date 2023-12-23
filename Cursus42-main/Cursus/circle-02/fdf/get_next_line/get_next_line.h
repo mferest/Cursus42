@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manufern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:56:55 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/09 21:09:00 by manufern         ###   ########.fr       */
+/*   Updated: 2023/10/26 14:10:47 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 # include<limits.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 100
+#  define BUFFER_SIZE 1000
 # endif
 
 char	*get_next_line(int fd);
-size_t	ft_strlen_mod(char *s);
-char	*ft_strjoin_mod(char *s1, char *s2);
-char	*ft_strdup_mod(char *s1);
-char	*ft_strchr_mod(char *s, int c);
-char	*ft_substr_mod(char *s);
+size_t	ft_strlen(char *s);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strdup(char *s1);
+char	*ft_strchr(char *s, int c);
+char	*ft_substr(char *s);
 #endif

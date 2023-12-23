@@ -3,24 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manufern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 18:42:50 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/09 21:12:04 by manufern         ###   ########.fr       */
+/*   Updated: 2023/10/26 13:39:58 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include "get_next_line.h"
 
 char	*next_line(char *buffer)
 {
 	char	*tmp;
 
-	tmp = ft_strchr_mod(buffer, '\n') + 1;
-	if (ft_strlen_mod(tmp) > 0)
+	tmp = ft_strchr(buffer, '\n') + 1;
+	if (ft_strlen(tmp) > 0)
 	{
-		tmp = ft_strdup_mod(tmp);
+		tmp = ft_strdup(tmp);
 	}
 	else
 	{
@@ -69,10 +68,10 @@ char	*ft_read(int fd, char *buffer, int *bytes_read)
 		return (NULL);
 	}
 	if (!buffer)
-		tmp = ft_strdup_mod(frag);
+		tmp = ft_strdup(frag);
 	else
 	{
-		tmp = ft_strjoin_mod(buffer, frag);
+		tmp = ft_strjoin(buffer, frag);
 		free(buffer);
 	}
 	return (tmp);
@@ -93,14 +92,14 @@ char	*get_next_line(int fd)
 	has_line = ft_found_line(buffer);
 	if (has_line == 1)
 	{
-		line = ft_substr_mod(buffer);
+		line = ft_substr(buffer);
 		if (!line)
 			return (free(buffer), buffer = NULL, NULL);
 		return (buffer = next_line(buffer), line);
 	}
 	if (has_line == 2 && bytes_read < BUFFER_SIZE)
 	{
-		line = ft_strdup_mod(buffer);
+		line = ft_strdup(buffer);
 		return (free(buffer), buffer = NULL, line);
 	}
 	return (get_next_line(fd));

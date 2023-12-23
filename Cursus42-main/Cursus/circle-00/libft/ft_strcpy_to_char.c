@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strcpy_to_char.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/16 17:20:39 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/20 17:21:47 by manufern         ###   ########.fr       */
+/*   Created: 2023/12/11 18:08:41 by manufern          #+#    #+#             */
+/*   Updated: 2023/12/11 18:08:45 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char *ft_strcpy_to_char(char * str, char c)
 {
-	int	i;
-	int	num;
-	int	sig;
+    char *aux;
+    int i;
 
-	i = 0;
-	num = 0;
-	sig = 1;
-	if (str == NULL)
-		return (0);
-	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
-		i ++;
-	if (str[i] == '-')
-		sig = -1;
-	if (str[i] == '-' || str[i] == '+')
-		i ++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		num = (num * 10) + (str[i] - '0');
-		i ++;
-	}
-	return (num * sig);
+    i = 0;
+    aux = malloc(sizeof(char) * (ft_strlen(str) + 1));
+    if (aux == NULL)
+        return (NULL);
+    while (str[i] != c && str[i] != '\0')
+    {
+        aux[i] = str[i];
+        i++;
+    }
+    aux[i] = '\0';
+    return (aux);
 }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manufern <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 15:40:07 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/09 21:07:19 by manufern         ###   ########.fr       */
+/*   Updated: 2023/10/26 13:41:52 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen_mod(char *s)
+size_t	ft_strlen(char *s)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ size_t	ft_strlen_mod(char *s)
 	return (i);
 }
 
-char	*ft_strjoin_mod(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	int		i;
 	int		j;
@@ -32,7 +32,7 @@ char	*ft_strjoin_mod(char *s1, char *s2)
 	j = 0;
 	if (!s1 || !s2)
 		return (NULL);
-	str = (char *)malloc(ft_strlen_mod(s1) + ft_strlen_mod(s2) + 1);
+	str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!str)
 		return (NULL);
 	while (s1[i] != '\0')
@@ -48,14 +48,14 @@ char	*ft_strjoin_mod(char *s1, char *s2)
 	return (str);
 }
 
-char	*ft_strdup_mod(char *s1)
+char	*ft_strdup(char *s1)
 {
 	char	*dupl;
 	int		i;
 
 	i = 0;
 	dupl = NULL;
-	dupl = malloc(ft_strlen_mod(s1) + 1);
+	dupl = malloc(ft_strlen(s1) + 1);
 	if (!dupl)
 		return (NULL);
 	while (s1[i] != '\0')
@@ -67,7 +67,7 @@ char	*ft_strdup_mod(char *s1)
 	return (dupl);
 }
 
-char	*ft_strchr_mod(char *s, int c)
+char	*ft_strchr(char *s, int c)
 {
 	while (*s != '\0')
 	{
@@ -80,7 +80,7 @@ char	*ft_strchr_mod(char *s, int c)
 	return (NULL);
 }
 
-char	*ft_substr_mod(char *s)
+char	*ft_substr(char *s)
 {
 	int		count;
 	char	*str;
