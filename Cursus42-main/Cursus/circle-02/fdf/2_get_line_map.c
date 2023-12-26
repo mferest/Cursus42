@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 20:06:40 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/19 18:07:52 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/26 12:16:15 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,11 @@ void ft_div_line(char const *line)
     i = 0;
     x = 0;
     map_line = ft_split(line, ' ');
-    while(map_line != NULL && map_line[i])
+    while (map_line != NULL && map_line[i])
     {
         ft_send_coord(x, y, z, map_line[i]);
-        i ++;
-        x = x + 1;
+        i++;
+        x = x + 1; // Considerar ajuste según la longitud real de la línea
     }
     y = y + 1;
     ft_free(map_line, i);

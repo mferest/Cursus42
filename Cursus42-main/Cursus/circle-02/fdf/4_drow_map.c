@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:30:38 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/20 18:42:18 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/26 13:43:15 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,98 +90,14 @@ void ft_drow(t_map *map, float center_x, float center_y)
     img.img = mlx_new_image(mlx, WIDTH, HEIGHT);
     img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
     map_aux = map;
-    while (map_aux)
-    {
-        final_coord[0] = ((map_aux->x - map_aux->y) * cos(ANGULE));
-        final_coord[1] = ((map_aux->x + map_aux->y - 2 * map_aux->z) * sin(ANGULE));
+    while (map_aux) {
+        final_coord[0] = (map_aux->x - map_aux->y) * cos(ANGULE);
+        final_coord[1] = (map_aux->x + map_aux->y) * sin(ANGULE) - map_aux->z;
         final_coord[0] *= SCALE_FACTOR;
         final_coord[1] *= SCALE_FACTOR;
         my_mlx_pixel_put(&img, final_coord[0] + center_x, final_coord[1] + center_y, 0xFFFFFF);
         map_aux = map_aux->next;
     }
-
     mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
     mlx_loop(mlx);
 }
-
-/* void ft_drow(t_map *map)
-{
-    void    *mlx;
-    void    *mlx_win;
-    t_data  img;
-    t_map  *map_aux;
-    float   final_coord[4];
-
-    mlx = mlx_init();
-    mlx_win = mlx_new_window(mlx, WIDTH, HEIGHT, "Hello world!");
-    img.img = mlx_new_image(mlx, WIDTH, HEIGHT);
-    img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
-
-    map_aux = map;
-    float center_x = WIDTH / 2;
-    float center_y = HEIGHT / 2;
-
-    while (map_aux) {
-        final_coord[0] = (map_aux->x * ft_adjust_x(map, WIDTH));
-        final_coord[1] = ((map_aux->y - map_aux->z) * ft_adjust_y(map, HEIGHT));
-
-        // Precompute sine and cosine for better performance
-        float sin_theta = sin(ANGULE);
-        float cos_theta = cos(ANGULE);
-
-        final_coord[2] = final_coord[0] * cos_theta - final_coord[1] * sin_theta;
-        final_coord[3] = final_coord[0] * sin_theta + final_coord[1] * cos_theta;
-
-        my_mlx_pixel_put(&img, final_coord[2] + center_x, final_coord[3] + center_y, 0xFFFFFF);
-        map_aux = map_aux->next;
-    }
-
-    mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-    mlx_loop(mlx);
-} */
-
-
-
-
-// Función para dibujar una línea (Bresenham's Line Algorithm)
-
-
-
-
-
-
-
-/*
-    Formula dubujar en isometrico.
-    double isometric_x = (sqrt(2) / 2) * (x - z);
-    double isometric_y = (sqrt(2) / 2) * (y + x + z);
-
-   float *X_iso = (x - z) / sqrt(2);
-    float *Y_iso = (y - z) / sqrt(2);
-
-    *X_iso = (sqrt(3) / 2) * x - (sqrt(3) / 2) * z;
-    *Y_iso = 0.5 * x + 0.5 * y - z;
-
-    *X_iso = (sqrt(2) / 2) * (x - z);
-    *Y_iso = (sqrt(6) / 3) * y + (sqrt(2) / 2) * (x + z);
-
-    float Xiso = (x - z) / sqrt(2);
-    float Yiso = (y + 2 * z) / sqrt(6);
-
-    float Xiso = (map_aux->x - map_aux->z) / sqrt(2);
-    float Yiso = (map_aux->x + 2 * map_aux->y + map_aux->z) / sqrt(6);
-
-   *X_iso = map_aux->x - map_aux->z * cos(theta);
-    *Y_iso = map_aux->y - map_aux->z * sin(theta); 
-    x * sin(theta) + y * sin(theta)
-
-    map_aux->x * cos(ANGULE) - map_aux->y * cos(ANGULE)
-     map_aux->x * sin(ANGULE) +  map_aux->y * sin(ANGULE)
-*/
-/* t_map *map_aux = map; 
-
-        while (map_aux)
-        {
-            ft_drow_pixel(map_aux->x, map_aux->y); 
-            map_aux = map_aux->next;
-        } */
