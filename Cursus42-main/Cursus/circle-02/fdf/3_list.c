@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:17:27 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/23 11:09:00 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/26 10:14:40 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,26 @@ void ft_point_down(t_map *map)
         line2 = line2->next;
 	while(line2 != NULL && line1 != NULL)
 	{
-       /* printf("line1 x = %d . line2 x = %d\n", line1->x, line2->x);  */
 		if (line1->y + 1 == line2->y)
         {
-            /* printf("entro al if \n"); */
 			line1->down = line2;
+            line1 = line1->next;
+		    line2 = line2->next;
         }
-        else
+        else if (line1->y + 1 != line2->y)
         {
-            printf("enro al else\n");
             while (line1 != NULL && line1->x != line2->x)
             {
                 line1 = line1->next;
             }
         }
-		line1 = line1->next;
-		line2 = line2->next;
+        else if (line1->y == line2->y)
+        {
+            while (line1 != NULL && line1->y + 1 != line2->y)
+            {
+                line2 = line2->next;
+            }
+        }
 	}
 }
 
