@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:17:27 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/26 13:29:39 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/26 14:11:51 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,7 @@ void create_list(int x, int y, int z, char *color)
     if (x == 234345 && y == 234345 && z == 234345)
     {
 		ft_point_down(map);
-        camera_x = ft_adjust_x(map, WIDTH);
-        camera_y = ft_adjust_y(map, HEIGHT);
-        ft_drow(map, WIDTH / 2, HEIGHT / 3);
+        ft_drow(map, WIDTH / 2, HEIGHT / 2);
     }
     else
     {

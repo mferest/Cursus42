@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:30:38 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/26 13:43:15 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/26 14:12:21 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,39 +15,6 @@
 #include "fdf.h"
 #include "libft/libft.h"
 #include "get_next_line/get_next_line.h"
-
-int ft_adjust_y(t_map *map, int window_y)
-{
-    t_map *map_aux;
-    int y_dimension;
-
-    y_dimension = 0;  
-    map_aux = map;
-    while (map_aux)
-    {
-        if (map_aux->y > y_dimension)
-            y_dimension = map_aux->y; 
-        map_aux = map_aux->next;
-    }
-    return ((window_y / y_dimension) / 4);
-}
-
-int ft_adjust_x(t_map *map, int window_x)
-{
-    t_map *map_aux;
-    int x_dimension;
-
-    x_dimension = 0;  
-    map_aux = map;
-    while (map_aux)
-    {
-        if (map_aux->x > x_dimension)
-            x_dimension = map_aux->x;
-        map_aux = map_aux->next;
-    }
-     return ((window_x / x_dimension) / 4);
-}
-
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
