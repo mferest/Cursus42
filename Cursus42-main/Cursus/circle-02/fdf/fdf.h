@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:44:04 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/27 11:42:31 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/27 15:36:41 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #define ANGULE (0.523599)
 #endif
 #ifndef SCALE_FACTOR 
-#define SCALE_FACTOR 10.0
+#define SCALE_FACTOR 20.0
 #endif
 
 #include <stdlib.h>
@@ -30,6 +30,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
+#include "mlx.h"
 #include "math.h"
 #include "libft/libft.h"
 #include "get_next_line/get_next_line.h"
@@ -62,7 +63,6 @@ void create_list(int x, int y, int z, char *color);
 void ft_lstadd_back_map(t_map **lst, t_map *new);
 void  ft_free_s_map(t_map **map);
 void ft_drow(t_map *map, float center_x, float center_y);
-/* void ft_drow_pixel(int x, int y); */
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int ft_adjust_x(t_map *map, int);
 int ft_adjust_y(t_map *map, int window_y);
@@ -70,4 +70,6 @@ int ft_adjust_x(t_map *map, int window_x);
 void my_mlx_pixel_put(t_data *data, int x, int y, int color);
 void ft_drow_pixel(int x, int y);
 int ft_atoi_hexa(char *str);
+void line_bresenham(t_data *img, int X1, int Y1, int X2, int Y2, int color0, int color1);
+int interpolate_color(int color0, int color1, int x0, int y0, int x1, int y1, int x, int y);
 #endif
