@@ -6,10 +6,12 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:32:01 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/23 11:00:55 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/27 13:10:30 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "mlx.h"
+#include "math.h"
 #include "fdf.h"
 #include "libft/libft.h"
 #include "get_next_line/get_next_line.h"
