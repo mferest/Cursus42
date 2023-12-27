@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:58:38 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/23 11:01:21 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/26 14:53:49 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void    ftliks()
 int	main(int argc, char **argv)
 {
     /* atexit(ftliks); */
-
     if (argc != 2)
     {
         printf("ERROR\n");

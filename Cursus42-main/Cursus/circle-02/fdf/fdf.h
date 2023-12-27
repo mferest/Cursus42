@@ -6,23 +6,23 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:44:04 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/26 13:26:56 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:01:39 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 #ifndef WIDTH
-#define WIDTH 1920
+#define WIDTH 2560
 #endif
 #ifndef HEIGHT
-#define HEIGHT 1080
+#define HEIGHT 1395
 #endif
 #ifndef ANGULE
 #define ANGULE (0.523599)
 #endif
 #ifndef SCALE_FACTOR 
-#define SCALE_FACTOR 20.0
+#define SCALE_FACTOR 10.0
 #endif
 
 #include <stdlib.h>
@@ -39,6 +39,8 @@ typedef struct s_map
   int           x;
   int           y;
   int           z;
+  float         x_rotate;
+  float         y_rotate;
   char          *color;
   struct s_map  *next;
   struct s_map  *down;
