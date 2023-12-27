@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:30:38 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/27 11:44:09 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/27 12:48:13 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@ void ft_drow(t_map *map, float center_x, float center_y)
         map_aux->x_rotate = (((map_aux->x - map_aux->y) * cos(ANGULE)) * SCALE_FACTOR);
         map_aux->y_rotate = ((map_aux->x + map_aux->y) * sin(ANGULE) - map_aux->z) * SCALE_FACTOR;
         if (map_aux->x_rotate + center_x <= WIDTH && map_aux->y_rotate + center_y <= HEIGHT 
-            && map_aux->x_rotate + center_x >= 0 && map_aux->y_rotate + center_y >= 0)
-            printf("color antes de dibujar: %s\n", map_aux->color);
+            && map_aux->x_rotate + center_x >= 0 && map_aux->y_rotate + center_y >= 0);
             my_mlx_pixel_put(&img, map_aux->x_rotate + center_x, map_aux->y_rotate + center_y, map_aux->color);
         map_aux = map_aux->next;
     }

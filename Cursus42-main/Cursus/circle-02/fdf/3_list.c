@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:17:27 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/27 12:38:38 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/27 12:48:40 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ t_map *new_map_node(int x, int y, int z, char *color)
     new_node->down = NULL;
     new_node->x_rotate = 0;
     new_node->y_rotate = 0;
-    // printf(" color en lista: %d", new_node->color);
     return new_node;
 }
 void ft_lstadd_back_map(t_map **lst, t_map *new)
