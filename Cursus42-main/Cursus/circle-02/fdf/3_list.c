@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:17:27 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/27 11:55:03 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/27 12:01:45 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,6 @@ void create_list(int x, int y, int z, char *color)
 {
     t_map *new_node ;
     static	t_map *map = NULL;
-    float	camera_x;
-	float	camera_y;
     
     new_node = NULL;
     printf("final");
