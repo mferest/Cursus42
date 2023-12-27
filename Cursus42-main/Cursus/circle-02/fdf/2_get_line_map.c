@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 20:06:40 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/27 11:59:55 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/27 12:38:53 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int ft_get_line_map(char *argv)
         ft_div_line(line);
         free (line);
     }
-    printf("nodo ultimo\n");
-    create_list(234345, 234345, 234345, "FFFFFF");
+    // printf("nodo ultimo\n");
+    create_list(234345, 234345, 234345, "0xFFFFFF");
     return (0);
 }

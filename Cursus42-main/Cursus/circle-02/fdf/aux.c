@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 11:01:57 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/27 11:40:36 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/27 12:40:11 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ int ft_atoi_hexa(char *str)
 {
     int nbr = 0;
     char todecimal;
-    printf("Color char: %s\n", str);
+    // printf("Color char: %s\n", str);
     
     if (*str == '0')
     {
@@ -24,7 +24,7 @@ int ft_atoi_hexa(char *str)
     {
         str++;
     }
-    printf("%s\n", str);
+    // printf("%s\n", str);
     while (*str)
     {
         todecimal = ft_toupper(*str);
