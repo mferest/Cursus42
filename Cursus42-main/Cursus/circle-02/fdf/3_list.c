@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:17:27 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/26 14:20:13 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/27 11:55:03 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,16 @@ t_map *new_map_node(int x, int y, int z, char *color)
     {
         return NULL;
     }
+    
     new_node->x = x;
     new_node->y = y;
     new_node->z = z;
-    new_node->color = color;
+    new_node->color = ft_atoi_hexa(color);
     new_node->next = NULL;
     new_node->down = NULL;
     new_node->x_rotate = 0;
     new_node->y_rotate = 0;
+    printf(" color en lista: %d", new_node->color);
     return new_node;
 }
 void ft_lstadd_back_map(t_map **lst, t_map *new)
@@ -91,6 +93,7 @@ void create_list(int x, int y, int z, char *color)
 	float	camera_y;
     
     new_node = NULL;
+    printf("final");
     if (x == 234345 && y == 234345 && z == 234345)
     {
 		ft_point_down(map);
@@ -98,9 +101,10 @@ void create_list(int x, int y, int z, char *color)
     }
     else
     {
-      new_node = new_map_node(x, y, z, color);
-      ft_lstadd_back_map(&map, new_node);
-      return ;
+        new_node = new_map_node(x, y, z, color);
+        ft_lstadd_back_map(&map, new_node);
+        printf("hola\n");
+        return ;
     }
     ft_free_s_map (&map);
 }

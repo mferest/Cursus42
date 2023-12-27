@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:30:38 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/26 15:00:59 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/27 11:44:09 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,25 +23,6 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int*)dst = color;
 }
-void ft_drow_pixel(int x, int y)
-{
-    void    *mlx;
-    void    *mlx_win;
-    t_data  img;
-    static int i = 1;
-
-    mlx = mlx_init();
-    mlx_win = mlx_new_window(mlx, WIDTH, HEIGHT, "Hello world!");
-    img.img = mlx_new_image(mlx, WIDTH, HEIGHT);
-    img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,
-                                &img.endian);
-            my_mlx_pixel_put(&img, x, y, 0xFFFFFF);
-
-
-    mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-    i++;
-    mlx_loop(mlx);
-}
 
 
 void ft_drow(t_map *map, float center_x, float center_y)
@@ -50,7 +31,6 @@ void ft_drow(t_map *map, float center_x, float center_y)
     void *mlx_win;
     t_data img;
     t_map *map_aux;
-    float final_coord[2];
 
     mlx = mlx_init();
     mlx_win = mlx_new_window(mlx, WIDTH, HEIGHT, "FDF");
@@ -62,7 +42,8 @@ void ft_drow(t_map *map, float center_x, float center_y)
         map_aux->y_rotate = ((map_aux->x + map_aux->y) * sin(ANGULE) - map_aux->z) * SCALE_FACTOR;
         if (map_aux->x_rotate + center_x <= WIDTH && map_aux->y_rotate + center_y <= HEIGHT 
             && map_aux->x_rotate + center_x >= 0 && map_aux->y_rotate + center_y >= 0)
-            my_mlx_pixel_put(&img, map_aux->x_rotate + center_x, map_aux->y_rotate + center_y, 0xFFFFFF);
+            printf("color antes de dibujar: %s\n", map_aux->color);
+            my_mlx_pixel_put(&img, map_aux->x_rotate + center_x, map_aux->y_rotate + center_y, map_aux->color);
         map_aux = map_aux->next;
     }
     mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);

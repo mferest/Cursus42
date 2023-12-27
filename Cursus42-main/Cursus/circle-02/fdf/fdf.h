@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:44:04 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/26 15:01:39 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/27 11:42:31 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct s_map
   int           z;
   float         x_rotate;
   float         y_rotate;
-  char          *color;
+  int           color;
   struct s_map  *next;
   struct s_map  *down;
 }				t_map;
@@ -69,4 +69,5 @@ int ft_adjust_y(t_map *map, int window_y);
 int ft_adjust_x(t_map *map, int window_x);
 void my_mlx_pixel_put(t_data *data, int x, int y, int color);
 void ft_drow_pixel(int x, int y);
+int ft_atoi_hexa(char *str);
 #endif
