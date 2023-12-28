@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:44:04 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/27 15:36:41 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/27 18:20:40 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,6 @@ void ft_drow_pixel(int x, int y);
 int ft_atoi_hexa(char *str);
 void line_bresenham(t_data *img, int X1, int Y1, int X2, int Y2, int color0, int color1);
 int interpolate_color(int color0, int color1, int x0, int y0, int x1, int y1, int x, int y);
+int ft_scale_x(t_map **map);
+int ft_scale_y(t_map **map);
 #endif

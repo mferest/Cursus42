@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:17:27 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/27 12:48:40 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/27 18:23:44 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,38 +15,22 @@
 #include "libft/libft.h"
 #include "get_next_line/get_next_line.h"
 
-void ft_point_down(t_map *map)
+void ft_point_down(t_map **map)
 {
-	t_map	*line1;
-	t_map	*line2;
-	
-	line1 = map;
-	line2 = map;
-	while (line2 != NULL && line2->y != 1)
+    t_map *line1 = *map;
+    t_map *line2 = *map;
+
+    while (line2 != NULL && line2->y != 1)
+    {
         line2 = line2->next;
-	while(line2 != NULL && line1 != NULL)
-	{
-		if (line1->y + 1 == line2->y)
-        {
-			line1->down = line2;
-            line1 = line1->next;
-		    line2 = line2->next;
-        }
-        else if (line1->y + 1 != line2->y)
-        {
-            while (line1 != NULL && line1->x != line2->x)
-            {
-                line1 = line1->next;
-            }
-        }
-        else if (line1->y == line2->y)
-        {
-            while (line1 != NULL && line1->y + 1 != line2->y)
-            {
-                line2 = line2->next;
-            }
-        }
-	}
+    }
+
+    while (line2)
+    {
+        line1->down = line2;
+        line1 = line1->next;
+        line2 = line2->next;
+    }
 }
 
 t_map *new_map_node(int x, int y, int z, char *color)
@@ -64,8 +48,8 @@ t_map *new_map_node(int x, int y, int z, char *color)
     new_node->color = ft_atoi_hexa(color);
     new_node->next = NULL;
     new_node->down = NULL;
-    new_node->x_rotate = 0;
-    new_node->y_rotate = 0;
+    new_node->x_rotate = (((x - y) * cos(ANGULE))) * SCALE_FACTOR;
+    new_node->y_rotate = ((x + y) * sin(ANGULE) - z) * SCALE_FACTOR;
     return new_node;
 }
 void ft_lstadd_back_map(t_map **lst, t_map *new)
@@ -94,7 +78,8 @@ void create_list(int x, int y, int z, char *color)
     new_node = NULL;
     if (x == 234345 && y == 234345 && z == 234345)
     {
-		ft_point_down(map);
+		ft_point_down(&map);
+        printf("%d", map->down->y);
         ft_drow(map, WIDTH / 2, HEIGHT / 2);
     }
     else
