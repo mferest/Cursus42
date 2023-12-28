@@ -6,7 +6,7 @@
 /*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:44:04 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/28 13:25:46 by manuel           ###   ########.fr       */
+/*   Updated: 2023/12/28 16:12:50 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@
 #define ANGULE (0.523599)
 #endif
 #ifndef SCALE_FACTOR 
-#define SCALE_FACTOR 20.0
+#define SCALE_FACTOR 30.0
+#define ZOOM_FACTOR 1.1
 #endif
 
 #include <stdlib.h>

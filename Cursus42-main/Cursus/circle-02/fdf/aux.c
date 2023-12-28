@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aux.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 11:01:57 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/27 12:43:10 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/28 14:40:50 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@ int ft_atoi_hexa(char *str)
 {
     int nbr = 0;
     char todecimal;
-    // printf("Color char: %s\n", str);
     
     if (*str == '0')
     {
@@ -24,7 +23,6 @@ int ft_atoi_hexa(char *str)
     {
         str++;
     }
-    // printf("%s\n", str);
     while (*str)
     {
         todecimal = ft_toupper(*str);
@@ -37,6 +35,5 @@ int ft_atoi_hexa(char *str)
         }
         str++;
     }
-    // printf("metiendo en lista\n");
     return nbr;
 }

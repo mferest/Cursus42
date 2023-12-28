@@ -6,7 +6,7 @@
 /*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:17:27 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/28 13:26:13 by manuel           ###   ########.fr       */
+/*   Updated: 2023/12/28 16:07:30 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ t_map *new_map_node(int x, int y, int z, char *color)
     {
         return NULL;
     }
-    
     new_node->x = x;
     new_node->y = y;
     new_node->z = z;
@@ -49,7 +48,7 @@ t_map *new_map_node(int x, int y, int z, char *color)
     new_node->next = NULL;
     new_node->down = NULL;
     new_node->x_rotate = (((x - y) * cos(ANGULE))) * SCALE_FACTOR;
-    new_node->y_rotate = ((x + y) * sin(ANGULE) - z) * SCALE_FACTOR;
+    new_node->y_rotate = ((x + y) * sin(ANGULE) - (z)) * SCALE_FACTOR;
     return new_node;
 }
 void ft_lstadd_back_map(t_map **lst, t_map *new)
