@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:44:04 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/27 18:20:40 by manufern         ###   ########.fr       */
+/*   Updated: 2023/12/28 12:39:20 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 #ifndef WIDTH
-#define WIDTH 2560
+#define WIDTH 1920 /* 2560 en 42 Madrid*/
 #endif
 #ifndef HEIGHT
-#define HEIGHT 1395
+#define HEIGHT 1010 /* 1395 en 42 Madrid*/
 #endif
 #ifndef ANGULE
 #define ANGULE (0.523599)
