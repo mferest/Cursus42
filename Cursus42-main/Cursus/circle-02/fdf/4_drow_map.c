@@ -6,17 +6,20 @@
 /*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:30:38 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/29 13:08:14 by manuel           ###   ########.fr       */
+/*   Updated: 2023/12/29 13:43:11 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "mlx.h"
+#include "math.h"
+#include <float.h>
 #include "fdf.h"
 #include "libft/libft.h"
 #include "get_next_line/get_next_line.h"
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
-	char    *dst;
+	char	*dst;
 
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int*)dst = color;
@@ -24,8 +27,8 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 void ft_drow_map(t_map *map, float center_x, float center_y, t_data *img)
 {
-    t_map   *line1 = map;
-    t_map   *line2 = map;
+    t_map *line1 = map;
+    t_map *line2 = map;
 
     while (line2 != NULL && line2->y != 1)
         line2 = line2->next;
@@ -42,6 +45,29 @@ void ft_drow_map(t_map *map, float center_x, float center_y, t_data *img)
             line2 = line2->next;
     }
 }
+
+/* void ft_drow_map(t_map *map, float center_x, float center_y, t_data *img)
+{
+    t_map   *line1;
+    t_map   *line2;
+
+    line1 = map;
+    line2 = map;
+    while (line2 != NULL && line2->y != 1)
+    {
+        line2 = line2->next;
+    }
+    while (line2 || ( line1 && line1->next))
+    {
+        if (line1->next != NULL && line1->y == line1->next->y)
+            ft_dda (img, line1->x_rotate + center_x, line1->y_rotate + center_y, line1->next->x_rotate + center_x, line1->next->y_rotate + center_y, line1->color);
+        if (line2)
+            ft_dda (img, line1->x_rotate + center_x, line1->y_rotate + center_y, line2->x_rotate + center_x, line2->y_rotate + center_y, line1->color);
+        line1 = line1->next;
+        if (line2)
+            line2 = line2->next;
+    }
+} */
 
 /* int key_hook(int keycode, void *param)
 {
@@ -67,6 +93,6 @@ void ft_drow(t_map *map, float center_x, float center_y)
     map_aux = map;
     ft_drow_map(map, center_x, center_y, &img);
     mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-    /* mlx_hook(mlx_win, 2, 1L << 0, key_hook, NULL); */ // Evento de tecla presionada
+    /* mlx_hook(mlx_win, 2, 1L << 0, key_hook, NULL);        // Evento de tecla presionada */
     mlx_loop(mlx);
 }

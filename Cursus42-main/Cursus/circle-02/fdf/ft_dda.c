@@ -6,7 +6,7 @@
 /*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 10:55:10 by manuel            #+#    #+#             */
-/*   Updated: 2023/12/29 12:46:42 by manuel           ###   ########.fr       */
+/*   Updated: 2023/12/29 14:28:29 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,52 @@ t_dda_params set_dda_params(t_map *p1, t_map *p2, float center_x, float center_y
 void ft_dda(t_data *img, t_dda_params params, int color1, int color2)
 {
     int i = 0;
+    int x_rounded;
+    int y_rounded;
+    int color_steps;
+    int color;
+    
+    color_steps = (color1 - color2) / params.steps;
+    color = color1;
     while (i <= params.steps)
     {
-        my_mlx_pixel_put(img, round(params.x), round(params.y), color1);
+        x_rounded = round(params.x);
+        y_rounded = round(params.y);
+        if (x_rounded >= 0 && x_rounded < WIDTH && y_rounded >= 0 && y_rounded < HEIGHT)
+            my_mlx_pixel_put(img, x_rounded, y_rounded, color1);
         params.x += params.incx;
         params.y += params.incy;
+        color = color + color_steps;
         i++;
     }
 }
 
-/* void ft_dda(t_data *img, int x1, int y1, int x2, int y2, int color)
+/* void ft_dda(t_data *img, t_dda_params params, int color1, int color2)
 {
-    dda_params  params;
+    int i = 0;
+    int x_rounded;
+    int y_rounded;
+    int color_steps;
+    int color;
+    
+    color_steps = ((color2 - color1) << 8) / params.steps;  // Corregido el cálculo de color_steps
+    color = color1 << 8;  // Se multiplica por 256 para evitar pérdida de precisión en la división
+    while (i <= params.steps)
+    {
+        x_rounded = round(params.x);
+        y_rounded = round(params.y);
+        if (x_rounded >= 0 && x_rounded < WIDTH && y_rounded >= 0 && y_rounded < HEIGHT)
+            my_mlx_pixel_put(img, x_rounded, y_rounded, color >> 8);  // Se divide por 256 para recuperar el valor original
+        params.x += params.incx;
+        params.y += params.incy;
+        color = color + color_steps;
+        i++;
+    }
+} */
+
+/* void ft_dda(t_data *img, t_dda_params params, int color1, int color2)
+{
+    t_dda_params  params;
     int         i;
 
     params.dx = x2 - x1;

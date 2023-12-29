@@ -6,7 +6,7 @@
 /*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:44:04 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/29 12:45:12 by manuel           ###   ########.fr       */
+/*   Updated: 2023/12/29 14:29:13 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 #endif
 
 #ifndef SCALE_FACTOR
-# define SCALE_FACTOR 30.0
+# define SCALE_FACTOR 5.0
 #endif
 
 #include <stdlib.h>
