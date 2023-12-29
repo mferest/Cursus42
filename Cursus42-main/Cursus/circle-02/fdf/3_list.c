@@ -6,7 +6,7 @@
 /*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:17:27 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/28 16:07:30 by manuel           ###   ########.fr       */
+/*   Updated: 2023/12/29 13:05:12 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,11 @@
 #include "libft/libft.h"
 #include "get_next_line/get_next_line.h"
 
-void ft_point_down(t_map **map)
-{
-    t_map *line1 = *map;
-    t_map *line2 = *map;
-
-    while (line2 != NULL && line2->y != 1)
-    {
-        line2 = line2->next;
-    }
-
-    while (line2)
-    {
-        line1->down = line2;
-        line1 = line1->next;
-        line2 = line2->next;
-    }
-}
-
 t_map *new_map_node(int x, int y, int z, char *color)
 {
-    t_map *new_node = malloc(sizeof(t_map));
+    t_map   *new_node;
     
+    new_node = malloc(sizeof(t_map));
     if (new_node == NULL)
     {
         return NULL;
@@ -53,7 +36,7 @@ t_map *new_map_node(int x, int y, int z, char *color)
 }
 void ft_lstadd_back_map(t_map **lst, t_map *new)
 {
-    t_map *tmp;
+    t_map   *tmp;
     
     if (*lst == NULL)
     {
@@ -71,14 +54,12 @@ void ft_lstadd_back_map(t_map **lst, t_map *new)
 
 void create_list(int x, int y, int z, char *color)
 {
-    t_map *new_node ;
-    static	t_map *map = NULL;
+    t_map           *new_node ;
+    static t_map    *map = NULL;
     
     new_node = NULL;
     if (x == 234345 && y == 234345 && z == 234345)
     {
-		ft_point_down(&map);
-        printf("%d", map->down->y);
         ft_drow(map, WIDTH / 2, HEIGHT / 2);
     }
     else

@@ -6,7 +6,7 @@
 /*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 20:06:40 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/28 14:30:47 by manuel           ###   ########.fr       */
+/*   Updated: 2023/12/29 12:53:25 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ void ft_div_line(char const *line)
 
 int ft_get_line_map(char *argv)
 {
-    char *line;
-    int fd;
+    char    *line;
+    int     fd;
     
     fd = open(argv, O_RDONLY);
     if (fd == -1)
