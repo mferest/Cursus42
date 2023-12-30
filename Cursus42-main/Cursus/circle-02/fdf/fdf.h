@@ -6,7 +6,7 @@
 /*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:44:04 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/29 14:29:13 by manuel           ###   ########.fr       */
+/*   Updated: 2023/12/30 11:58:38 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 # define FDF_H
 
 #ifndef WIDTH
-# define WIDTH 1920 /* 2560 en 42 Madrid */
+# define WIDTH  1200 /*1920 casa*/ /* 2560 en 42 Madrid */
 #endif
 
 #ifndef HEIGHT
-# define HEIGHT 1010 /* 1395 en 42 Madrid */
+# define HEIGHT 800 /*1010 casa*/ /* 1395 en 42 Madrid */
 #endif
 
 #ifndef ANGULE
@@ -26,7 +26,7 @@
 #endif
 
 #ifndef SCALE_FACTOR
-# define SCALE_FACTOR 5.0
+# define SCALE_FACTOR 20.0
 #endif
 
 #include <stdlib.h>

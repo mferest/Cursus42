@@ -6,7 +6,7 @@
 /*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 10:55:10 by manuel            #+#    #+#             */
-/*   Updated: 2023/12/29 14:28:29 by manuel           ###   ########.fr       */
+/*   Updated: 2023/12/30 11:56:17 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void ft_dda(t_data *img, t_dda_params params, int color1, int color2)
         x_rounded = round(params.x);
         y_rounded = round(params.y);
         if (x_rounded >= 0 && x_rounded < WIDTH && y_rounded >= 0 && y_rounded < HEIGHT)
-            my_mlx_pixel_put(img, x_rounded, y_rounded, color1);
+            my_mlx_pixel_put(img, x_rounded, y_rounded, color);
         params.x += params.incx;
         params.y += params.incy;
         color = color + color_steps;

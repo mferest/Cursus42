@@ -1,0 +1,4 @@
+
+Compilacion en linux:
+gcc 1_main.c 2_get_line_map.c 3_list.c 4_drow_map.c free.c ft_bresemham.c aux.c ft_dda.c  ./get_next_line/get_next_line.c ./get_next_line/get_next_line_utils.c ./libft/libft.a ./minilibx-linux/libmlx_Linux.a -lX11 -lXext -lm
+
