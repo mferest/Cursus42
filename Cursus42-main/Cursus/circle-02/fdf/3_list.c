@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   3_list.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 18:17:27 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/29 14:20:43 by manuel           ###   ########.fr       */
+/*   Updated: 2024/01/08 19:55:21 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ t_map *new_map_node(int x, int y, int z, char *color)
     new_node->z = z/3;
     new_node->color = ft_atoi_hexa(color);
     new_node->next = NULL;
-    new_node->down = NULL;
     new_node->x_rotate = (((x - y) * cos(ANGULE))) * SCALE_FACTOR;
     new_node->y_rotate = ((x + y) * sin(ANGULE) - (z/3)) * SCALE_FACTOR;
     return new_node;
@@ -68,7 +67,7 @@ void create_list(int x, int y, int z, char *color)
         ft_lstadd_back_map(&map, new_node);
         return ;
     }
-    ft_free_s_map (&map);
+    /* ft_free_s_map (&map); */
 }
 
 /* t_map *map_aux = map;

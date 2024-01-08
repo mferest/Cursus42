@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:32:01 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/27 13:10:30 by manufern         ###   ########.fr       */
+/*   Updated: 2024/01/08 18:41:56 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void ft_free_s_map(t_map **map)
     t_map    *aux;
     t_map    *dulp;
     
-    /* printf("luverando"); */
+    printf("luverando");
     if (map == NULL)
     {
         printf("NULL");
@@ -31,7 +31,7 @@ void ft_free_s_map(t_map **map)
     dulp = *map;
     while(dulp)
     {
-       /*  printf("a\n"); */
+       printf("a\n");
         aux = dulp->next;
         free(dulp);
         dulp = aux;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   4_drow_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 16:30:38 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/29 13:43:11 by manuel           ###   ########.fr       */
+/*   Updated: 2024/01/08 20:04:42 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void ft_drow_map(t_map *map, float center_x, float center_y, t_data *img)
     while (line2 != NULL && line2->y != 1)
         line2 = line2->next;
 
-    while (line2 || (line1 && line1->next))
+    while (line1 && (line2 || line1->next))
     {
-        if (line1->next != NULL && line1->y == line1->next->y)
+        if (line1->next && line1->y == line1->next->y)
             ft_dda(img, set_dda_params(line1, line1->next, center_x, center_y), line1->color, line1->next->color);
         if (line2)
             ft_dda(img, set_dda_params(line1, line2, center_x, center_y), line1->color, line2->color);
@@ -46,53 +46,42 @@ void ft_drow_map(t_map *map, float center_x, float center_y, t_data *img)
     }
 }
 
-/* void ft_drow_map(t_map *map, float center_x, float center_y, t_data *img)
+int close_window(int keycode, void *param)
 {
-    t_map   *line1;
-    t_map   *line2;
+    t_data *data = (t_data *)param;
 
-    line1 = map;
-    line2 = map;
-    while (line2 != NULL && line2->y != 1)
+    if (data != NULL && data->mlx != NULL)
     {
-        line2 = line2->next;
+        mlx_destroy_image(data->mlx, data->img);
+        mlx_destroy_window(data->mlx, data->win);
     }
-    while (line2 || ( line1 && line1->next))
-    {
-        if (line1->next != NULL && line1->y == line1->next->y)
-            ft_dda (img, line1->x_rotate + center_x, line1->y_rotate + center_y, line1->next->x_rotate + center_x, line1->next->y_rotate + center_y, line1->color);
-        if (line2)
-            ft_dda (img, line1->x_rotate + center_x, line1->y_rotate + center_y, line2->x_rotate + center_x, line2->y_rotate + center_y, line1->color);
-        line1 = line1->next;
-        if (line2)
-            line2 = line2->next;
-    }
-} */
-
-/* int key_hook(int keycode, void *param)
-{
-    (void)param;
-
-    if (keycode == 65307) // Código para la tecla 'ESC' en Linux
-        exit(0);
-
     return (0);
-} */
-
+}
 void ft_drow(t_map *map, float center_x, float center_y)
 {
     void    *mlx;
     void    *mlx_win;
     t_data  img;
-    t_map   *map_aux;
 
     mlx = mlx_init();
     mlx_win = mlx_new_window(mlx, WIDTH, HEIGHT, "FDF");
+    if (mlx_win == NULL)
+    {
+        return;
+    }
     img.img = mlx_new_image(mlx, WIDTH, HEIGHT);
-    img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
-    map_aux = map;
+    if (img.img == NULL)
+    {
+        mlx_destroy_window(mlx, mlx_win);
+        return;
+    }
+    img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.exit_flag);
     ft_drow_map(map, center_x, center_y, &img);
     mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-    /* mlx_hook(mlx_win, 2, 1L << 0, key_hook, NULL);        // Evento de tecla presionada */
+    if (!mlx_hook(mlx_win, 17, 1L << 17, close_window, &img))
+    {
+        ft_free_s_map(&map);
+        exit (1);
+    }
     mlx_loop(mlx);
 }

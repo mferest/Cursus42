@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 16:44:04 by manufern          #+#    #+#             */
-/*   Updated: 2023/12/30 11:58:38 by manuel           ###   ########.fr       */
+/*   Updated: 2024/01/08 19:44:42 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 # define FDF_H
 
 #ifndef WIDTH
-# define WIDTH  1200 /*1920 casa*/ /* 2560 en 42 Madrid */
+# define WIDTH  2560 /*1920 casa*/ /* 2560 en 42 Madrid */
 #endif
 
 #ifndef HEIGHT
-# define HEIGHT 800 /*1010 casa*/ /* 1395 en 42 Madrid */
+# define HEIGHT 1395 /*1010 casa*/ /* 1395 en 42 Madrid */
 #endif
 
 #ifndef ANGULE
@@ -48,16 +48,17 @@ typedef struct s_map
 	float y_rotate;
 	int color;
 	struct s_map *next;
-	struct s_map *down;
 } t_map;
 
 typedef struct s_data
 {
-	void *img;
-	char *addr;
-	int bits_per_pixel;
-	int line_length;
-	int endian;
+    void *mlx;
+    void *win;
+    void *img;
+    char *addr;
+    int bits_per_pixel;
+    int line_length;
+    int	exit_flag;
 } t_data;
 
 typedef struct s_dda_params
